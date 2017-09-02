@@ -25,7 +25,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="bd2d42c0-e7b5-431f-9b49-d7eb238e0e4e">
-        <schema name="logiston" object-types="table, view" />
+        <schema name="logiston" object-types="table" />
       </connection>
     </loaded-nodes>
   </component>

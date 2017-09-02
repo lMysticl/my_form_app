@@ -17,24 +17,24 @@ public class LoginController {
 
     private UserService userService;
 
-    @GetMapping(value = "/login")
+    @GetMapping(value = "/login2")
     public ModelAndView login() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("login");
+        modelAndView.setViewName("login2");
         return modelAndView;
     }
 
     //TODO
-    @GetMapping(value = "/registration")
+    @GetMapping(value = "/registration2")
     public ModelAndView registration() {
         ModelAndView modelAndView = new ModelAndView();
         User user = new User();
         modelAndView.addObject("user", user);
-        modelAndView.setViewName("registration");
+        modelAndView.setViewName("registration2");
         return modelAndView;
     }
 //TODO
-    @PostMapping(value = "/registration")
+    @PostMapping(value = "/registration2")
     public ModelAndView createNewUser(@Valid User user, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
         User userExists = userService.findUserByEmail(user.getEmail());
@@ -44,12 +44,12 @@ public class LoginController {
                             "There is already a user registered with the email provided");
         }
         if (bindingResult.hasErrors()) {
-            modelAndView.setViewName("registration");
+            modelAndView.setViewName("registration2");
         } else {
             userService.saveUser(user);
             modelAndView.addObject("successMessage", "User has been registered successfully");
             modelAndView.addObject("user", new User());
-            modelAndView.setViewName("login");
+            modelAndView.setViewName("login2");
 
         }
         return modelAndView;
