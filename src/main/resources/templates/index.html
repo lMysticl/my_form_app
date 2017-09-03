@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns="http://www.w3.org/1999/xhtml">
 <head lang="en">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Spring Framework Guru</title>
 
+    <link href="css/style.css" rel="stylesheet"/>
     <th:block th:include="fragments/headerinc :: head"></th:block>
 </head>
-<body>
+<body th:inline="text">
+
 <div class="container">
     <th:block th:include="fragments/header :: header"></th:block>
+
+
 </div>
-<div th:replace="fragments/footer :: footer"/>
+<div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>

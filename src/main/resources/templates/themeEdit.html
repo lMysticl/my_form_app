@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
-<head lang="en">
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
     <title>Spring Framework Guru</title>
-    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
-
+    <th:block th:include="fragments/headerinc :: head"></th:block>
 </head>
-<body>
+<body id="themeEdit" th:inline="text">
 <div class="container">
-    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <th:block th:include="fragments/header :: header"></th:block>
     <h2>Product Details</h2>
     <div>
         <form class="form-horizontal" th:object="${theme}" th:action="@{/theme}" method="post">
@@ -20,11 +20,12 @@
             </div>
 
             <div class="row">
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn  btn-primary ">Submit</button>
             </div>
         </form>
     </div>
 </div>
-<div th:replace="fragments/footer :: footer"/>
+
+<div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>

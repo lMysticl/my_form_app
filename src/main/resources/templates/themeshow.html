@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head lang="en">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Spring Framework Guru</title>
-
-    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+    <link href="css/style.css" rel="stylesheet"/>
+    <th:block th:include="fragments/headerinc :: head"></th:block>
 </head>
-<body>
+<body th:inline="text">
 <div class="container">
     <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
     <div>
@@ -41,11 +43,34 @@
                 <p><textarea rows="5" cols="45" name="text" class="form-control"
                              th:field="*{comment.message}"></textarea>
                 </p>
-                <button type="submit" class="btn btn-default">Add Comment</button>
+                <button type="submit" class="btn  btn-primary">Add Comment</button>
             </div>
         </form>
     </div>
 </div>
+
 <div th:replace="fragments/footer :: footer"/>
+<th:block th:include="fragments/headerinc :: head"></th:block>
+<style type="text/css">
+    body {
+
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/login.jpg', sizingMethod='scale');
+        -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/hero_gradient.gif',sizingMethod='scale')";
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 17px;
+        background: url(../images/login.jpg) no-repeat fixed 50% 30%;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    }
+    td{
+        background: whitesmoke;
+    }
+    h2,footer{
+        color: whitesmoke;
+    }
+</style>
+
 </body>
 </html>

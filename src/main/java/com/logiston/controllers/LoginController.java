@@ -24,7 +24,6 @@ public class LoginController {
         return modelAndView;
     }
 
-    //TODO
     @GetMapping(value = "/registration")
     public ModelAndView registration() {
         ModelAndView modelAndView = new ModelAndView();
@@ -33,7 +32,7 @@ public class LoginController {
         modelAndView.setViewName("registration");
         return modelAndView;
     }
-//TODO
+
     @PostMapping(value = "/registration")
     public ModelAndView createNewUser(@Valid User user, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();

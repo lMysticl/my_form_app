@@ -6,7 +6,8 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -20,7 +21,7 @@ public class Theme implements Serializable {
 
     private String title;
 
-    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(name = "theme_comments",
             joinColumns = {@JoinColumn(name = "themeId")},
             inverseJoinColumns = {@JoinColumn(name = "commentId")})

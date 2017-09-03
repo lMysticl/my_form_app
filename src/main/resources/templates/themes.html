@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<!--xmlns:sec="http://www.w3.org/1999/xhtml">-->
-<head lang="en">
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
 
     <title>Spring Framework Guru</title>
 
-    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+    <th:block th:include="fragments/headerinc :: head"></th:block>
+
 </head>
-<body>
+<body th:inline="text">
 <div class="container">
-    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <th:block th:include="fragments/header :: header"></th:block>
     <div th:if="${not #lists.isEmpty(themes)}">
         <h2>Themes</h2>
         <a th:href="@{/theme/new}">Create Theme</a>
@@ -19,7 +20,7 @@
                 <th>Id</th>
                 <th>Title</th>
                 <th>Count of comments</th>
-                <!--<th>View</th>-->
+                <th>View</th>-
                 <th><p sec:authorize="hasAuthority('ADMIN')">Edit</p></th>
                 <th><p sec:authorize="hasAuthority('ADMIN')">Delete</p></th>
             </tr>
@@ -27,7 +28,7 @@
                 <td th:text="${theme.themeId}"/>
                 <td><a th:href="${'/theme/' + theme.themeId}" th:text="${theme.title}"></a></td>
                 <td th:text="${theme.getComments().size()}">comments</td>
-                <!--<td><a th:href="${'/theme/' + theme.themeId}">View</a></td>-->
+                <td><a th:href="${'/theme/' + theme.themeId}">Info</a></td>
                 <td><a sec:authorize="hasAuthority('ADMIN')" th:href="${'/theme/edit/' + theme.themeId}">Edit</a></td>
                 <td><a sec:authorize="hasAuthority('ADMIN')" onclick="return confirm('Are you sure?')"
                        th:href="${'/theme/delete/' + theme.themeId}">Delete</a></td>
@@ -35,6 +36,7 @@
         </table>
     </div>
 </div>
-<div th:replace="fragments/footer :: footer"/>
+
+<div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>

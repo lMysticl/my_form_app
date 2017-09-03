@@ -31,7 +31,7 @@ public class ThemeController {
         return "themes";
     }
 
-    @GetMapping("theme/{id}")
+    @RequestMapping("theme/{id}")
     public String showProduct(@PathVariable Long id, Model model) {
         model.addAttribute("theme", themeService.getThemeById(id));
         Comment comment = new Comment();
@@ -40,20 +40,19 @@ public class ThemeController {
         return "themeshow";
     }
 
-    @GetMapping("theme/edit/{id}")
+    @RequestMapping("theme/edit/{id}")
     public String edit(@PathVariable Long id, Model model) {
         model.addAttribute("theme", themeService.getThemeById(id));
         return "themeEdit";
     }
 
-    @GetMapping("theme/delete/{id}")
+    @RequestMapping("theme/delete/{id}")
     public String delete(@PathVariable Long id) {
-        System.out.println(id);
         themeService.delete(id);
         return "redirect:/themes";
     }
 
-    @GetMapping("theme/new")
+    @RequestMapping("theme/new")
     public String newProduct(Model model) {
         Theme theme = new Theme();
         model.addAttribute("theme", theme);

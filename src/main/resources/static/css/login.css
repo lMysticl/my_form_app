@@ -35,3 +35,54 @@ input[type="password"] {
     border-top-right-radius: 0;
 }
 
+.login {
+
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    /*
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
+    width: 300px;
+    padding: 10px 10px;
+    background-color: #1b6d85;
+    border-radius: 10px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    /*-webkit-animation-delay: .5s;*/
+    /*animation-delay: .5s;*/
+    /*-webkit-animation-name: form-down;*/
+    /*animation-name: form-down;*/
+    /*-webkit-animation-duration: .5s;*/
+    /*animation-duration: .5s;*/
+    /*-webkit-animation-fill-mode: forwards;*/
+    /*animation-fill-mode: forwards;*/
+    /*-webkit-animation-iteration-count: 1;*/
+    /*animation-iteration-count: 1;*/
+}
+
+/*.login {*/
+    /*position: fixed;*/
+    /*top: -100%;*/
+    /*left: 50%;*/
+    /*-webkit-transform: translate(-50%, -50%);*/
+    /*transform: translate(-50%, -50%);*/
+    /*width: 400px;*/
+    /*padding: 10px 20px;*/
+    /*background-color: cadetblue;*/
+    /*border-radius: 10px;*/
+    /*font-family: Georgia, "Times New Roman", Times, serif;*/
+    /*-webkit-animation-delay: .5s;*/
+    /*animation-delay: .5s;*/
+    /*-webkit-animation-name: form-down;*/
+    /*animation-name: form-down;*/
+    /*-webkit-animation-duration: .5s;*/
+    /*animation-duration: .5s;*/
+    /*-webkit-animation-fill-mode: forwards;*/
+    /*animation-fill-mode: forwards;*/
+    /*-webkit-animation-iteration-count: 1;*/
+    /*animation-iteration-count: 1;*/
+/*}*/
+
