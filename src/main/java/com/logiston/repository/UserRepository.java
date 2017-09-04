@@ -1,8 +1,11 @@
 package com.logiston.repository;
 
 import com.logiston.entity.User;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends CrudRepository<User, Long> {
+/**
+ * @author Pavel Putrenkov
+ */
+public interface UserRepository extends JpaRepository<User, Long> {
     User findByEmail(String email);
 }

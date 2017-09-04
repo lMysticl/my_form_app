@@ -5,12 +5,17 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 
+/**
+ * @author Pavel Putrenkov
+ */
 @Entity
 @Table(name = "role")
 @Getter
 @Setter
 @ToString(exclude = "id")
+@Transactional
 public class Role {
 
     @Id

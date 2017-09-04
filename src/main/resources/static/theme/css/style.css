@@ -1,0 +1,82 @@
+body {
+
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/../../images/image.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/hero_gradient.gif',sizingMethod='scale')";
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    background: url('/../../images/image.jpg') no-repeat fixed 50% 30%;
+
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+}
+
+.box {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    font-family: sans-serif;
+    text-align: center;
+    line-height: 1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    max-width: 50%;
+    max-height: 50%;
+    padding: 20px 40px;
+}
+
+.invalid-email-password {
+    font-size: 20px;
+    color: #FF1C19;
+}
+
+td {
+    background: whitesmoke;
+}
+
+h1, h2, footer, ul, p, label {
+    color: whitesmoke;
+}
+
+.form-sign-in {
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 10px 20px;
+    background-color: cadetblue;
+    border-radius: 8px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
+    /*-webkit-animation-name: form-down;*/
+    /*animation-name: form-down;*/
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    transition: .5s;
+}
+
+@-webkit-keyframes form-down {
+    from {
+        top: -100%
+    }
+    to {
+        top: 50%
+    }
+}
+
+@keyframes form-down {
+    from {
+        top: -100%
+    }
+    to {
+        top: 50%
+    }
+}

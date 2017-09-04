@@ -11,6 +11,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 
+/**
+ * @author Pavel Putrenkov
+ */
 @Controller
 @AllArgsConstructor
 public class LoginController {
@@ -45,11 +48,11 @@ public class LoginController {
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("registration");
         } else {
+            userService.setUpUserData(user);
             userService.saveUser(user);
             modelAndView.addObject("successMessage", "User has been registered successfully");
             modelAndView.addObject("user", new User());
             modelAndView.setViewName("login");
-
         }
         return modelAndView;
     }

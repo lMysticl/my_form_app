@@ -1,0 +1,8 @@
+/**
+ * @author Pavel Putrenkov
+ */
+$(document).ready(function () {
+    $("#voice-send").click(function () {
+        $('.form-sign-in').css("top", "45%");
+    });
+});

@@ -9,6 +9,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Pavel Putrenkov
+ */
 @Entity
 @Getter
 @Setter
@@ -21,7 +24,7 @@ public class Theme implements Serializable {
 
     private String title;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "theme_comments",
             joinColumns = {@JoinColumn(name = "themeId")},
             inverseJoinColumns = {@JoinColumn(name = "commentId")})

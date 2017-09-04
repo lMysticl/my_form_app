@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * @author Pavel Putrenkov
+ */
 // handle 403 page
 @Component
 public class MyAccessDeniedHandler implements AccessDeniedHandler {
@@ -25,7 +28,7 @@ public class MyAccessDeniedHandler implements AccessDeniedHandler {
                        AccessDeniedException e) throws IOException, ServletException {
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-
+        System.out.println(auth.getName()+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         if (auth != null) {
             logger.info("User '" + auth.getName()
                     + "' attempted to access the protected URL: "

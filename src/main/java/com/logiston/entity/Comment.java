@@ -8,6 +8,9 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+/**
+ * @author Pavel Putrenkov
+ */
 @Entity
 @Getter
 @Setter

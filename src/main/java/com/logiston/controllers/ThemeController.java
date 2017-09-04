@@ -11,10 +11,17 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
+/**
+ * @author Pavel Putrenkov
+ */
 @Controller
 @AllArgsConstructor
 public class ThemeController {
@@ -26,7 +33,7 @@ public class ThemeController {
 
     @GetMapping(value = "/themes")
     public String list(Model model) {
-        Iterable<Theme> themes = themeService.listAllThemes();
+        ArrayList<Theme> themes = (ArrayList<Theme>) themeService.listAllThemes();
         model.addAttribute("themes", themes);
         return "themes";
     }
@@ -68,7 +75,6 @@ public class ThemeController {
             Comment comment = new Comment();
             comment.setMessage(message);
             comment.setDateTime(LocalDateTime.now());
-
             Authentication auth = SecurityContextHolder.getContext().getAuthentication();
             User user = userService.findUserByEmail(auth.getName());
             comment.setUser(user);

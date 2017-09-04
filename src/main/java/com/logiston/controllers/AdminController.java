@@ -18,6 +18,9 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
+/**
+ * @author Pavel Putrenkov
+ */
 @Controller
 @AllArgsConstructor
 public class AdminController {
@@ -26,14 +29,26 @@ public class AdminController {
 
     private RoleRepository roleRepository;
 
-
+    /**
+     * Method gets List of all users, can create {@link List<User>} entity with any role.
+     *
+     * @param model set all users {@link List<User>} to page.
+     *
+     * @return to user.html
+     */
     @GetMapping(value = "/user/users")
     public String list(Model model) {
-        Iterable<User> users = userService.listAllUsers();
+        List<User> users = userService.listAllUsers();
         model.addAttribute("users", users);
         return "/user/users";
     }
-
+    /**
+     * Updates {@link User} entity associated with provided id param.
+     *
+     * @param model user to update.
+     *
+     * @return to userEdit.html
+     */
     @GetMapping("user/edit/{id}")
     public String edit(@PathVariable Long id, Model model) {
         User userById = userService.getUserById(id);
@@ -49,12 +64,25 @@ public class AdminController {
         return "/user/userEdit";
     }
 
+    /**
+     * Delete {@link User} user
+     *  by user
+     *  @param  id .
+     *
+     */
     @GetMapping("user/delete/{id}")
     public String delete(@PathVariable Long id) {
         userService.delete(id);
         return "redirect:/user/users";
     }
 
+    /**
+     * Method for admin, can save {@link User} entity with any role.
+     *
+     * @param user  {@link User} entity.
+     *
+     * @return save {@link User} entity.
+     */
     @PostMapping(value = "user/{id}")
     public String saveProduct(HttpServletRequest request, @PathVariable Long id, User user) {
         Integer userRole = new Integer(request.getParameter("userRole"));
@@ -72,4 +100,5 @@ public class AdminController {
 
         return "redirect:/user/users";
     }
+
 }

@@ -3,12 +3,19 @@ package com.logiston.services;
 
 import com.logiston.entity.User;
 
+import java.util.List;
+
+/**
+ * @author Pavel Putrenkov
+ */
 public interface UserService {
-    Iterable<User> listAllUsers();
+    void setUpUserData(User user);
+
+    List<User> listAllUsers();
 
     User getUserById(Long id);
 
-    void saveUser(User user);
+    User saveUser(User user);
 
     User findUserByEmail(String email);
 

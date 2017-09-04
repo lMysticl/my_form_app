@@ -3,13 +3,18 @@ package com.logiston.services.impl;
 import com.logiston.entity.Theme;
 import com.logiston.repository.ThemeRepository;
 import com.logiston.services.ThemeService;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
+/**
+ * @author Pavel Putrenkov
+ */
 @Component
-@AllArgsConstructor
 public class ThemeServiceImpl implements ThemeService {
 
+    @Autowired
     private ThemeRepository themeRepository;
 
     public void setThemeRepository(ThemeRepository themeRepository) {
@@ -17,7 +22,7 @@ public class ThemeServiceImpl implements ThemeService {
     }
 
     @Override
-    public Iterable<Theme> listAllThemes() {
+    public List<Theme> listAllThemes() {
         return themeRepository.findAll();
     }
 

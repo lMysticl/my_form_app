@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
       xmlns="http://www.w3.org/1999/xhtml">
-<head >
+<head>
     <title>Spring Framework Guru</title>
-   <th:block th:include="fragments/headerinc :: head"></th:block>
+    <th:block th:include="fragments/headerinc :: head"></th:block>
 </head>
 <body th:inline="text">
 <div class="container">
@@ -36,25 +36,5 @@
     </div>
 </div>
 <div th:replace="fragments/footer :: footer"></div>
-<style type="text/css">
-    body {
-
-        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/login.jpg', sizingMethod='scale');
-        -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/hero_gradient.gif',sizingMethod='scale')";
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 17px;
-        background: url(../images/login.jpg) no-repeat fixed 50% 30%;
-        background-size: cover;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-    }
-    td{
-        background: whitesmoke;
-    }
-    h2,footer{
-        color: whitesmoke;
-    }
-</style>
 </body>
 </html>

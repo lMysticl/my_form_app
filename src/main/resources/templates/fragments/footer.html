@@ -3,25 +3,40 @@
 <head>
 
 </head>
-<body  th:inline="text">
+<body th:inline="text">
 <div th:fragment="footer">
 
     <div class="container">
 
         <footer>
             <!-- this is footer -->
-            &copy; 2017 adriano
             <span sec:authorize="isAuthenticated()">
                 | Logged user: <span sec:authentication="name"></span> |
                 Roles: <span sec:authentication="principal.authorities"></span> |
                 <a th:href="@{/logout}">Sign Out</a>
             </span>
-
-
-
         </footer>
     </div>
+    <form th:action="@{/login}" method="POST" class="form-sign-in">
+        <h3 class="form-signin-heading" th:text="Welcome"></h3>
+        <br/>
+        <input type="text" id="email" maxlength="80" name="email" th:placeholder="Email"
+               class="form-control"/> <br/>
 
+        <input type="password" th:placeholder="Password"
+               id="password" name="password" class="form-control"/> <br/>
+
+        <div align="center" th:if="${param.error}">
+            <p id="invalid-email-password">Email or Password invalid, please verify</p>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" onclick="test()"
+                th:text="Login"></button>
+        <a class="btn btn-lg btn-primary btn-block" href="#" th:href="@{/}">Home Page</a>
+
+    </form>
 </div>
+
+
 </body>
 </html>

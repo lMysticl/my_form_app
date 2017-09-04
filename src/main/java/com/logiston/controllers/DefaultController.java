@@ -3,6 +3,9 @@ package com.logiston.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+/**
+ * @author Pavel Putrenkov
+ */
 @Controller
 public class DefaultController {
 

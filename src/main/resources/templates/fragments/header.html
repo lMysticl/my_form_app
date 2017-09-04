@@ -5,29 +5,28 @@
 
 
 </head>
-<body  th:inline="text">
+<body th:inline="text">
 
 <div class="container">
     <div th:fragment="header">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+                    <a class="navbar-brand" href="#" id="voice-send">Login</a>
                 </div>
-                    <ul class="nav navbar-nav">
-                        <li><a href="#" th:href="@{/themes}">Themes</a></li>
-                        <li><a href="#" th:href="@{/theme/new}">Create Theme</a></li>
-                        <li><a href="#" th:href="@{/login}">Login</a></li>
-                        <li><a href="#" th:href="@{/registration}">Registration</a></li>
-                        <li><a href="#" th:href="@{/about}">About</a></li>
-                        <li><a href="#" th:href="@{/user/users}">Admin Panel</a></li>
-                        <!--<li><a sec:authorize="hasAuthority('ADMIN')" href="#" th:href="@{/user/users}">Admin Panel</a></li>-->
-                    </ul>
-                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="#" th:href="@{/themes}">Themes</a></li>
+                    <li><a href="#" th:href="@{/theme/new}">Create Theme</a></li>
+                    <li><a href="#" th:href="@{/registration}">Registration</a></li>
+                    <li><a href="#" th:href="@{/user/users}">Admin Panel</a></li>
+                </ul>
+            </div>
         </nav>
 
     </div>
 </div>
+
+
 <th:block th:include="fragments/headerinc :: head"></th:block>
 </body>
 </html>
