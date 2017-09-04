@@ -1,12 +1,3 @@
-logging:
-    level:
-        org:
-            hibernate:
-                SQL: 'off'
-                type:
-                    descriptor:
-                        sql:
-                            BasicBinder: 'off'
 server:
     port: 8080
 spring:
@@ -40,3 +31,12 @@ spring:
         users-query: select logiston.user.email, logiston.user.password, logiston.user.active from logiston.user where logiston.user.email = ?
     thymeleaf:
         cache: false
+logging:
+    level:
+        org:
+            hibernate:
+                SQL: 'off'
+                type:
+                    descriptor:
+                        sql:
+                            BasicBinder: 'off'
