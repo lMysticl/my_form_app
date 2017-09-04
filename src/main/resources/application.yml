@@ -3,14 +3,14 @@ server:
 spring:
     datasource:
         driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://localhost:5432/logiston?createDatabaseIfNotExist=true&useSSL=false
+        username: postgres
         password: root
         tomcat:
             max-active: 50
             max-idle: 20
             max-wait: 20000
             min-idle: 15
-        url: jdbc:postgresql://localhost:5432/logiston?createDatabaseIfNotExist=true&useSSL=false
-        username: postgres
     jpa:
         database: POSTGRESQL
         database-platform: org.hibernate.dialect.PostgreSQLDialect
