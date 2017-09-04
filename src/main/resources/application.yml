@@ -1,0 +1,42 @@
+logging:
+    level:
+        org:
+            hibernate:
+                SQL: 'off'
+                type:
+                    descriptor:
+                        sql:
+                            BasicBinder: 'off'
+server:
+    port: 8080
+spring:
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        password: root
+        tomcat:
+            max-active: 50
+            max-idle: 20
+            max-wait: 20000
+            min-idle: 15
+        url: jdbc:postgresql://localhost:5432/logiston?createDatabaseIfNotExist=true&useSSL=false
+        username: postgres
+    jpa:
+        database: POSTGRESQL
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        generate-ddl: true
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                default_schema: logiston
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                enable_lazy_load_no_trans: true
+                format_sql: true
+                id:
+                    new_generator_mappings: false
+        show-sql: false
+    queries:
+        roles-query: select logiston.user.email, logiston.role.role from logiston.user inner join logiston.user_role on(logiston.user.user_id = logiston.user_role.user_id) inner join logiston.role on(logiston.user_role.role_id = logiston.role.role_id) where logiston.user.email = ?
+        users-query: select logiston.user.email, logiston.user.password, logiston.user.active from logiston.user where logiston.user.email = ?
+    thymeleaf:
+        cache: false
