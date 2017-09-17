@@ -16,7 +16,6 @@ import java.io.IOException;
 /**
  * @author Pavel Putrenkov
  */
-// handle 403 page
 @Component
 public class MyAccessDeniedHandler implements AccessDeniedHandler {
 
